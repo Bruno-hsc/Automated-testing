@@ -1,0 +1,56 @@
+jest - feramenta de teste
+
+-> yarn dev : para rodar o nodemon
+
+1 - yarn init
+2 - instalar o express: yarn add express
+3 - yarn add jest -D : instalar o jest
+4 - yarn jest --init
+5 - descomentar a parte do testMatch
+6 - escrever o teste e rodar o comando: yarn test
+7 - criar a estruturas de arqvs e pastas app, src etc
+8 - instalar o sequelize: yarn add sequelize
+9 - instalar yarn add sequelize-cli -D : para rodar as migrations e etc
+10 - yarn add pg para intalar o postgris caso queria ultilizar essa aplicação em
+modo de produção.
+11 - yarn add sqlite3 -D : modo que vamos usar para fazer a conecção do sequelize
+com o sqlite
+12 - instalar o nodemon: yarn add nodemon -D
+13 - nos scripts colocar: "start":"node src/server.js"
+14 - "dev": "nodemon src/server.js --ignore __tests__" ignorar os testes
+15 - yarn sequelize init para configurar o sequelize
+16 - configurar o sequelize
+17 - yarn add dotenv : apra carregar as inf que estao contidas no arq .env
+18 - criar o arq .env e colocar as variaveis
+19 - criar no package.json "pretest":"NODE_ENV=test sequelize db:migrate"
+para rodar todas as migrations antes dos tests criando elas no banco de dados.
+E depois criar "posttest":"NODE_ENV=test sequelize db:migrate:undo:all" para
+apagar todas as migrations e voltar ao normal.
+
+- yarn sequelize db:migrate : depois de criar a migration rodar esse comando
+
+- yarn add supertest -D : ferramenta usada para fazer as requisições dos testes
+
+- instalar o bcrypt para criptografar a senha
+
+- instalar o yarn add jsonwebtoken : para gerar o token
+
+- yarn add factory-girl -D : para fazer um molde para cadastrar users para teste
+
+- yarn add faker : gerar dados aleatorios para o factory
+
+- Mock e envio de email : testa se a aplicação chega ate o ponto de enviar email.
+  yarn add nodemailer : para enviar email
+
+- coverage report - para ver o que foi testado % etc
+  no arq jest.js : collectCoverage: true,
+  collectCoverageFrom: ['src/**'], ** endica todos os arqvs de pasta
+  coverageDirectory: '__tests__/coverage',
+  // ignorar os arquivos que nao fazem sentido serem testados
+   coveragePathIgnorePatterns: [
+     "/node_modules/"
+  ],
+  -> outra estrategia é testar apenas o que esta dentro de app :
+    collectCoverageFrom: ['src/app/**'],
+    -> para abrir o arq com mais explicações usanod o terminal:
+    ctrl + o /__tests__/coverage/icov-report/index
