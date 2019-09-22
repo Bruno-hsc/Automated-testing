@@ -1,5 +1,5 @@
 # Automated-testing
-REST API in Node.JS applying tests with jest.
+REST API in NodeJS applying tests with jest.
 
 # Testes automaticos
-REST API em Node.JS aplicando testes com jest.
+REST API em NodeJS aplicando testes com jest.
